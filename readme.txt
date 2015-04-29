@@ -12,6 +12,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin adds <em>installments quantity</em> and the <em>price of each installment</em>, on WooCommerce loop pages and single product page.<br />It has an options page under "Settings" > "Installments" where you can define <strong>installments quantity</strong>, <strong>prefix</strong>, <strong>suffix</strong> and a <strong>minimum value</strong> for each installment.
 
+(Português)
+
 Este plugin para WooCommerce adiciona <em>quantidade de parcelas</em> e o <em>valor de cada parcela</em>, nas páginas que listam todos os produtos e na página individual de cada produto.<br />Possui uma página de opções em "Configurações" > "Parcelas" onde é possível definir a <strong>quantidade de parcelas</strong>, <strong>prefixo</strong>, <strong>sufixo</strong> e um <strong>valor mínimo</strong> para cada parcela.
 
 == Installation ==
@@ -20,7 +22,7 @@ Este plugin para WooCommerce adiciona <em>quantidade de parcelas</em> e o <em>va
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. Enable plugin functionality and set your installmentes configuration under "Settings" > "Installments"
 
-(Portugês)
+(Português)
 
 1. Faça o upload do plugin através do painel do WordPress, indo em "Plugins" > "Adicionar Novo"
 2. Ative o plugin indo até o menu "Plugins"
@@ -31,6 +33,8 @@ Este plugin para WooCommerce adiciona <em>quantidade de parcelas</em> e o <em>va
 = I want to add interest, is that possible? =
 
 Not yet, soon...
+
+(Português)
 
 = Quero adicionar juros, é possível? =
 
