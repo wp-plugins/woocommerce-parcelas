@@ -38,8 +38,8 @@ Ainda não, em breve...
 
 == Screenshots ==
 
-1. produto-plugin-woocommerce_parcelas.(png|jpg|jpeg|gif).
-2. tela-plugin-woocommerce_parcelas
+1. produto-plugin-woocommerce_parcelas.jpg
+2. tela-plugin-woocommerce_parcelas.jpg
 
 == Changelog ==
 
@@ -62,13 +62,3 @@ Ainda não, em breve...
 
 = 1.2 =
 * Now you can define an installment minimum value. PagSeguro, for example, set it to 5.
-
-== Arbitrary section ==
-
-
-
-== A brief Markdown Example ==
-
-
-
-`<?php code(); // goes in backticks ?>`
