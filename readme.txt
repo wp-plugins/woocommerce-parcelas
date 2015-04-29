@@ -10,9 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-This plugin adds installments quantity and the price of each installment, on WooCommerce loop pages and single product page. It has an options page under "Settings" > "Installments" where you can define "installments quantity", "prefix", "suffix" and a "minimum value" for each installment.
+This plugin adds <em>installments quantity</em> and the <em>price of each installment</em>, on WooCommerce loop pages and single product page.<br />It has an options page under "Settings" > "Installments" where you can define <strong>installments quantity</strong>, <strong>prefix</strong>, <strong>suffix</strong> and a <strong>minimum value</strong> for each installment.
 
-Este plugin para WooCommerce adiciona quantidade de parcelas e o valor de cada parcela, nas páginas que listam todos os produtos e na página individual de cada produto. Possui uma página de opções em "Configurações" > "Parcelas" onde é possível definir a "quantidade de parcelas", "prefixo", "sufixo" e um valor mínimo para cada parcela.
+Este plugin para WooCommerce adiciona <em>quantidade de parcelas</em> e o <em>valor de cada parcela</em>, nas páginas que listam todos os produtos e na página individual de cada produto.<br />Possui uma página de opções em "Configurações" > "Parcelas" onde é possível definir a <strong>quantidade de parcelas</strong>, <strong>prefixo</strong>, <strong>sufixo</strong> e um <strong>valor mínimo</strong> para cada parcela.
 
 == Installation ==
 
@@ -38,8 +38,8 @@ Ainda não, em breve...
 
 == Screenshots ==
 
-1. produto-plugin-woocommerce_parcelas.jpg
-2. tela-plugin-woocommerce_parcelas.jpg
+1. Tela de configuração
+2. Exemplo na listagem de produtos
 
 == Changelog ==
 
