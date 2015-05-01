@@ -114,9 +114,6 @@ function fswp_parcelas_callback($args){
 	global $fs_options;
 
 	$value = (isset($fs_options[$id])) ? $fs_options[$id] : '';
-	if(is_numeric($value) && $value < 2){
-		$value = '';
-	}
 	
 	echo "<input type='$type' id='$id' name='".$fs_option_name."[$id]' value='$value' />";
 	echo $desc != '' ? "<br /><span class='description'>$desc</span>" : '';
