@@ -30,15 +30,23 @@ Este plugin para WooCommerce adiciona <em>quantidade de parcelas</em> e o <em>va
 
 == Frequently Asked Questions ==
 
-= I want to add interest, is that possible? =
+= Does it work with point, as decimal separator? =
 
-Not yet, soon...
+Yes.
 
 = Does it work with variable product? =
 
 Yes.
 
+= I want to add interest, is that possible? =
+
+Not yet, soon...
+
 (Português)
+
+= Funciona com o ponto, como separador decimal? =
+
+Sim.
 
 = Funciona com produto variável? =
 
@@ -59,6 +67,9 @@ Ainda não, em breve...
 
 == Changelog ==
 
+= 1.2.3 =
+* js code was fixed to work correctly when decimal separator is point.
+
 = 1.2.2 =
 * Fully compatible with variable product.
 
@@ -75,6 +86,10 @@ Ainda não, em breve...
 * Plugin release.
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+* Now the plugin works with point, as decimal separator.
+
 = 1.2.2 =
 * For those who wants to displays correct installments in variable product, now the plugin is fully compatible with that product type.
 

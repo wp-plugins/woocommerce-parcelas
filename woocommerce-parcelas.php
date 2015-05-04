@@ -5,7 +5,7 @@
 * Description: Adiciona quantidade de parcelas e o valor de cada parcela, nas páginas que listam todos os produtos e na página individual de cada produto. Suporta valor mínimo para cada parcela. Totalmente compatível com produto variável.
 * Author: Filipe Seabra
 * Author URI: http://www.filipecsweb.com.br/
-* Version: 1.2.2
+* Version: 1.2.3
 * License: GPLv2 or later
 * Text Domain: woocommerce-parcelas
 * Domain Path: lang/

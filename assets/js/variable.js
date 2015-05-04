@@ -6,45 +6,41 @@ jQuery(window).load(function(){
         var preco_length = Number(preco.length);
         var preco_cru = '';
         var output;
-        
-        if(preco_length > 1){
-            if(sep_dec == ','){                                  
-                var i;
-                for(i = 1; i < preco_length; i++){
-                    preco_cru += preco[i - 1];
+                                         
+        var i;
+        for(i = 1; i < preco_length; i++){
+            preco_cru += preco[i - 1];
+        }
+
+        preco_cru += '.' + preco[preco_length - 1];
+
+        preco_cru = Number(preco_cru);
+
+        if(preco_cru <= fswp_valor_minimo){
+            output = '';
+        }
+        else if(preco_cru > fswp_valor_minimo){
+            var preco_parcelado = preco_cru / fswp_parcelas;
+            preco_parcelado = preco_parcelado.toFixed(2);
+
+            if(preco_parcelado < fswp_valor_minimo){
+                var fswp_parcelas_menor = fswp_parcelas;
+                while(fswp_parcelas_menor > 1 && preco_parcelado < fswp_valor_minimo){
+                    fswp_parcelas_menor--;
+                    preco_parcelado = preco_cru / fswp_parcelas_menor;
+                    preco_parcelado = preco_parcelado.toFixed(2);
                 }
 
-                preco_cru += '.' + preco[preco_length - 1];
-
-                Number(preco_cru);
-
-                if(preco_cru <= fswp_valor_minimo){
+                if(preco_parcelado > fswp_valor_minimo){
+                    output = fswp_prefixo + ' ' + fswp_parcelas_menor + fswp_x_de + ' ' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + ' ' + fswp_sufixo;
+                }
+                else{
                     output = '';
                 }
-                else if(preco_cru > fswp_valor_minimo){
-                    var preco_parcelado = preco_cru / fswp_parcelas;
-                    preco_parcelado = preco_parcelado.toFixed(2);
-
-                    if(preco_parcelado < fswp_valor_minimo){
-                        var fswp_parcelas_menor = fswp_parcelas;
-                        while(fswp_parcelas_menor > 1 && preco_parcelado < fswp_valor_minimo){
-                            fswp_parcelas_menor--;
-                            preco_parcelado = preco_cru / fswp_parcelas_menor;
-                            preco_parcelado = preco_parcelado.toFixed(2);
-                        }
-
-                        if(preco_parcelado > fswp_valor_minimo){
-                            output = fswp_prefixo + ' ' + fswp_parcelas_menor + fswp_x_de + ' ' + cur_symbol + pv(preco_parcelado) + ' ' + fswp_sufixo;
-                        }
-                        else{
-                            output = '';
-                        }
-                    }
-                    else{
-                        output = fswp_prefixo + ' ' + fswp_parcelas + fswp_x_de + ' ' + cur_symbol + pv(preco_parcelado) + ' ' + fswp_sufixo;
-                    }
-                }
-            }                                                  
+            }
+            else{
+                output = fswp_prefixo + ' ' + fswp_parcelas + fswp_x_de + ' ' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + ' ' + fswp_sufixo;
+            }
         }
 
         jQuery('.fswp_variable_installment').html(output);

@@ -1,4 +1,8 @@
 <?php 
+/**
+* @author   Filipe Seabra
+* @version  1.2.2
+*/
 
 add_action('admin_menu', 'fswp_menu');
 function fswp_menu(){

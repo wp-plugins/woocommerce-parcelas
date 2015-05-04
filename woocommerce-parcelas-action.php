@@ -1,4 +1,8 @@
-<?php 
+<?php
+/**
+* @author   Filipe Seabra
+* @version  1.2.3
+*/
 
 if(!defined('ABSPATH')){
     exit;
@@ -101,6 +105,7 @@ function js_after_single_variation(){
     if($product->get_variation_price('min') != $product->get_variation_price('max')){
         $fswp_x_de = __('x de', 'woocommerce-parcelas');
         $sep_dec = get_option('woocommerce_price_decimal_sep');
+        $sep_mil = get_option('woocommerce_price_thousand_sep');
         $cur_symbol = get_woocommerce_currency_symbol();            
 ?>
         <script type="text/javascript">
@@ -112,14 +117,18 @@ function js_after_single_variation(){
             var fswp_sufixo = <?php echo "'".$fs_options['fswp_sufixo']."'"; ?>;
             var fswp_x_de = <?php echo "'".$fswp_x_de."'"; ?>;
             var sep_dec = <?php echo "'".$sep_dec."'"; ?>;
+            var sep_mil = <?php echo "'".$sep_mil."'"; ?>;
             var cur_symbol = <?php echo "'".$cur_symbol."'"; ?>
-
-            // Ponto por vírgula
-            function pv(fswp_var){
-                fswp_var = fswp_var.replace('.', ',');
-
-                return fswp_var;
-            }           
+            
+            function formatMoney(number, c, d, m){
+                c = isNaN(c = Math.abs(c)) ? 2 : c, 
+                d = d == undefined ? "." : d, 
+                m = m == undefined ? "," : m, 
+                s = number < 0 ? "-" : "", 
+                i = parseInt(number = Math.abs(+number || 0).toFixed(c)) + "", 
+                j = (j = i.length) > 3 ? j % 3 : 0;
+               return s + (j ? i.substr(0, j) + m : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + m) + (c ? d + Math.abs(number - i).toFixed(c).slice(2) : "");
+             };       
         </script>
 <?php
         wp_enqueue_script('fswp-variable', WOO_PARCELAS_URL.'assets/js/variable.js', '', false, true);
