@@ -1,7 +1,7 @@
 <?php
 /**
 * @author   Filipe Seabra
-* @version  1.2.3
+* @version  1.2.4
 */
 
 if(!defined('ABSPATH')){
@@ -30,7 +30,7 @@ function fswp_calc() {
 
     if($product->has_child()){
         if($product->get_variation_price('min') != $product->get_variation_price('max')){
-            $fswp_prefixo = __('A partir de', 'woocommerce-parcelas');
+            $fswp_prefixo = apply_filters('variable_product_with_different_prices_prefix', __('A partir de', 'woocommerce-parcelas'));
         }
     }
 
@@ -54,14 +54,18 @@ function fswp_calc() {
                 }
 
                 if($preco_parcelado > $fswp_valor_minimo){
-                    $output = "<p class='price fswp_calc'>".sprintf(__('%s %sx de ', 'woocommerce-parcelas'), $fswp_prefixo, $fswp_parcelas).$preco_parcelado_formatado." ".$fswp_sufixo."</p>";
+                    $output  = "<div class='fswp_calc_wrapper'>";
+                    $output .= "<p class='price fswp_calc'>".sprintf(__('<span class="fswp_prefixo">%s %sx de</span> ', 'woocommerce-parcelas'), $fswp_prefixo, $fswp_parcelas).$preco_parcelado_formatado." <span class='fswp_sufixo'>".$fswp_sufixo."</span></p>";
+                    $output .= "</div>";                    
                 }
                 else{
                     $output = '';
                 }
             }
             else{
-                $output = "<p class='price fswp_calc'>".sprintf(__('%s %sx de ', 'woocommerce-parcelas'), $fswp_prefixo, $fswp_parcelas).$preco_parcelado_formatado." ".$fswp_sufixo."</p>";
+                $output  = "<div class='fswp_calc_wrapper'>";
+                $output .= "<p class='price fswp_calc'>".sprintf(__('<span class="fswp_prefixo">%s %sx de </span>', 'woocommerce-parcelas'), $fswp_prefixo, $fswp_parcelas).$preco_parcelado_formatado." <span class='fswp_sufixo'>".$fswp_sufixo."</span></p>";
+                $output .= "</div>";
             }      
         }            
 
@@ -75,7 +79,11 @@ function fswp_calc() {
  * @return string with the installments price based in installments quantity.
  */
 function fswp_in_loop(){
+    do_action('before_installments_in_loop');
+
     echo fswp_calc();
+
+    do_action('after_installments_in_loop');
 }
 
 /**
@@ -84,18 +92,22 @@ function fswp_in_loop(){
  * @return string with the installments price based in installments quantity.
  */
 function fswp_in_single(){
+    do_action('before_installments_in_single');
+
     echo fswp_calc();
+
+    do_action('after_installments_in_single');
 }
 
 /**
-* @return space to attach correct installments price
+* @return space to attach correct installments price, when variable product has different prices
 */
 function output_installment_on_variation_change(){
     echo "<div class='fswp_variable_installment'></div>";
 }
 
 /**
-* @return javascript to calculate and attach correct installments price
+* @return javascript to calculate and attach correct installments price, when variable product has different prices
 */
 function js_after_single_variation(){
     $product = get_product();

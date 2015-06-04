@@ -57,7 +57,6 @@ Sim.
 Ainda não, em breve...
 
 <hr />
-<p>BUGS AND SUGGESTIONS:</p>
 <p><a href="http://filipecsweb.com.br/contato/" target="_blank">Contato / Contact</a></p>
 
 == Screenshots ==
@@ -66,6 +65,9 @@ Ainda não, em breve...
 2. Exemplo na listagem de produtos
 
 == Changelog ==
+
+= 1.2.4 =
+* Some bugs were fixed. Some actions were added. One filter was added. Better css classes were added.
 
 = 1.2.3 =
 * js code was fixed to work correctly when decimal separator is point.

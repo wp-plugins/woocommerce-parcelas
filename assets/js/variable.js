@@ -32,14 +32,14 @@ jQuery(window).load(function(){
                 }
 
                 if(preco_parcelado > fswp_valor_minimo){
-                    output = fswp_prefixo + ' ' + fswp_parcelas_menor + fswp_x_de + ' ' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + ' ' + fswp_sufixo;
+                    output = fswp_prefixo + ' ' + fswp_parcelas_menor + fswp_x_de + ' <span class="amount">' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + '</span> ' + fswp_sufixo;
                 }
                 else{
                     output = '';
                 }
             }
             else{
-                output = fswp_prefixo + ' ' + fswp_parcelas + fswp_x_de + ' ' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + ' ' + fswp_sufixo;
+                output = fswp_prefixo + ' ' + fswp_parcelas + fswp_x_de + ' <span class="amount">' + cur_symbol + formatMoney(preco_parcelado, 2, sep_dec, sep_mil) + '</span> ' + fswp_sufixo;
             }
         }
 

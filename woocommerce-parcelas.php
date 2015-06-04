@@ -5,7 +5,7 @@
 * Description: Adiciona quantidade de parcelas e o valor de cada parcela, nas páginas que listam todos os produtos e na página individual de cada produto. Suporta valor mínimo para cada parcela. Totalmente compatível com produto variável.
 * Author: Filipe Seabra
 * Author URI: http://www.filipecsweb.com.br/
-* Version: 1.2.3
+* Version: 1.2.4
 * License: GPLv2 or later
 * Text Domain: woocommerce-parcelas
 * Domain Path: lang/
@@ -24,7 +24,7 @@ function load_fswp_texdomain(){
 }
 add_action('plugins_loaded', 'load_fswp_texdomain');
 
-/* Load .js */
+/* Load scripts */
 function load_fswp_scripts(){
 	wp_enqueue_script('woocommerce-parcelas-admin', WOO_PARCELAS_URL.'assets/js/admin.js', 'jquery', false, false);
 	// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
@@ -34,8 +34,10 @@ function load_fswp_scripts(){
 }
 add_action('admin_enqueue_scripts', 'load_fswp_scripts');
 
+/* Load options */
 require_once(WOO_PARCELAS_DIR.'woocommerce-parcelas-options.php');
 
+/* Load the code that makes the magic */
 if(isset($fs_options['fswp_ativar']) && $fs_options['fswp_ativar'] == '1'){
 	require_once(WOO_PARCELAS_DIR.'woocommerce-parcelas-action.php');
 }
